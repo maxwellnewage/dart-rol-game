@@ -1,11 +1,13 @@
-import 'dart:math';
+
+
+import 'package:DartRolGame/Utils.dart';
 
 import 'models/Fighter.dart';
 
 class BattleSystem {
   static void attack(Fighter to, Fighter from) {
-    var myAtq = from.minAtq + Random().nextInt(from.maxAtq - from.minAtq);
-    var otherDef = to.minDef + Random().nextInt(to.maxDef - to.minDef);
+    var myAtq = Utils.rand(from.minAtq, from.maxAtq);
+    var otherDef = Utils.rand(to.minDef, to.maxDef);
     var impact = otherDef - myAtq;
 
     print('${to.name} HP: ${to.currentHP}');
