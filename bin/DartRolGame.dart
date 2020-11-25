@@ -1,3 +1,4 @@
+import 'package:DartRolGame/BattleSystem.dart';
 import 'package:DartRolGame/Entity.dart';
 
 void main(List<String> arguments) {
@@ -5,7 +6,7 @@ void main(List<String> arguments) {
   var slime = Entity('Slime', 10, 10, 10);
 
   while(hero.currentHP > 0 && slime.currentHP > 0) {
-    hero.attack(slime);
+    BattleSystem.attack(slime, hero);
   }
 
   if(hero.currentHP > 0) {
